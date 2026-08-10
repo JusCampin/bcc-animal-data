@@ -1,0 +1,108 @@
+AnimalData = AnimalData or {}
+
+local function add(model, label, category, cargoUnits, options)
+    local data = options or {}
+    data.model = model
+    data.modelHash = joaat(model)
+    data.label = label
+    data.category = category
+    data.cargoUnits = cargoUnits
+    data.butcherable = data.butcherable ~= false
+    data.skinnable = data.skinnable ~= false
+    AnimalData[data.modelHash] = data
+end
+
+-- Large game and livestock
+add('a_c_alligator_01', 'American Alligator', 'large', 3)
+add('a_c_alligator_02', 'American Alligator', 'large', 3)
+add('a_c_alligator_03', 'American Alligator', 'large', 3)
+add('a_c_bear_01', 'Grizzly Bear', 'massive', 3)
+add('a_c_bearblack_01', 'American Black Bear', 'massive', 3)
+add('a_c_bighornram_01', 'Bighorn Ram', 'large', 2)
+add('a_c_boar_01', 'Wild Boar', 'large', 2)
+add('a_c_buck_01', 'Whitetail Buck', 'large', 2)
+add('a_c_buffalo_01', 'American Bison', 'massive', 3)
+add('a_c_bull_01', 'Bull', 'massive', 3)
+add('a_c_cougar_01', 'Cougar', 'large', 2)
+add('a_c_cow', 'Cow', 'massive', 3)
+add('a_c_coyote_01', 'Coyote', 'large', 2)
+add('a_c_deer_01', 'Whitetail Deer', 'large', 2)
+add('a_c_elk_01', 'Rocky Mountain Elk', 'massive', 3)
+add('a_c_goat_01', 'Alpine Goat', 'large', 2)
+add('a_c_javelina_01', 'Collared Peccary', 'large', 2)
+add('a_c_moose_01', 'Western Moose', 'massive', 3)
+add('a_c_ox_01', 'Ox', 'massive', 3)
+add('a_c_panther_01', 'Panther', 'large', 2)
+add('a_c_pig_01', 'Pig', 'large', 2)
+add('a_c_pronghorn_01', 'American Pronghorn', 'large', 2)
+add('a_c_sheep_01', 'Sheep', 'large', 2)
+add('a_c_wolf', 'Gray Wolf', 'large', 2)
+add('a_c_wolf_medium', 'Gray Wolf', 'large', 2)
+add('a_c_wolf_small', 'Gray Wolf', 'large', 2)
+
+-- Small and medium game
+add('a_c_armadillo_01', 'Nine-banded Armadillo', 'small', 1)
+add('a_c_badger_01', 'American Badger', 'small', 1)
+add('a_c_beaver_01', 'North American Beaver', 'medium', 1)
+add('a_c_fox_01', 'Fox', 'medium', 1)
+add('a_c_gilamonster_01', 'Gila Monster', 'small', 1)
+add('a_c_iguanadesert_01', 'Desert Iguana', 'small', 1)
+add('a_c_iguana_01', 'Green Iguana', 'small', 1)
+add('a_c_muskrat_01', 'American Muskrat', 'small', 1)
+add('a_c_possum_01', 'Virginia Opossum', 'small', 1)
+add('a_c_rabbit_01', 'Rabbit', 'small', 1)
+add('a_c_raccoon_01', 'North American Raccoon', 'small', 1)
+add('a_c_skunk_01', 'Striped Skunk', 'small', 1)
+add('a_c_snakeblacktailrattle_01', 'Black-tailed Rattlesnake', 'small', 1)
+add('a_c_snakeferdelance_01', 'Fer-de-Lance Snake', 'small', 1)
+add('a_c_snakeredboa_01', 'Red Boa Snake', 'small', 1)
+add('a_c_snakewater_01', 'Water Snake', 'small', 1)
+add('a_c_snake_01', 'Snake', 'small', 1)
+add('a_c_squirrel_01', 'Squirrel', 'small', 1)
+add('a_c_turtlesnapping_01', 'Snapping Turtle', 'medium', 1)
+
+-- Birds
+add('a_c_californiacondor_01', 'California Condor', 'bird', 1)
+add('a_c_chicken_01', 'Chicken', 'bird', 1)
+add('a_c_cormorant_01', 'Cormorant', 'bird', 1)
+add('a_c_cranewhooping_01', 'Whooping Crane', 'bird', 1)
+add('a_c_duck_01', 'Duck', 'bird', 1)
+add('a_c_eagle_01', 'Eagle', 'bird', 1)
+add('a_c_egret_01', 'Egret', 'bird', 1)
+add('a_c_goosecanada_01', 'Canada Goose', 'bird', 1)
+add('a_c_hawk_01', 'Hawk', 'bird', 1)
+add('a_c_heron_01', 'Heron', 'bird', 1)
+add('a_c_loon_01', 'Loon', 'bird', 1)
+add('a_c_owl_01', 'Owl', 'bird', 1)
+add('a_c_pelican_01', 'Pelican', 'bird', 1)
+add('a_c_pheasant_01', 'Pheasant', 'bird', 1)
+add('a_c_prairiechicken_01', 'Prairie Chicken', 'bird', 1)
+add('a_c_raven_01', 'Raven', 'bird', 1)
+add('a_c_rooster_01', 'Rooster', 'bird', 1)
+add('a_c_roseatespoonbill_01', 'Roseate Spoonbill', 'bird', 1)
+add('a_c_seagull_01', 'Seagull', 'bird', 1)
+add('a_c_turkey_01', 'Turkey', 'bird', 1)
+add('a_c_turkey_02', 'Turkey', 'bird', 1)
+add('a_c_turkeywild_01', 'Wild Turkey', 'bird', 1)
+add('a_c_vulture_01', 'Vulture', 'bird', 1)
+
+-- Tiny animals are catalogued for butcher/collection consumers, although
+-- normal hunting-wagon carry rules may prevent players from carrying them.
+add('a_c_bat_01', 'Bat', 'tiny', 1)
+add('a_c_bluejay_01', 'Blue Jay', 'tiny', 1)
+add('a_c_cardinal_01', 'Northern Cardinal', 'tiny', 1)
+add('a_c_chipmunk_01', 'Chipmunk', 'tiny', 1)
+add('a_c_crab_01', 'Crab', 'tiny', 1)
+add('a_c_crawfish_01', 'Crawfish', 'tiny', 1)
+add('a_c_crow_01', 'Crow', 'tiny', 1)
+add('a_c_frogbull_01', 'American Bullfrog', 'tiny', 1)
+add('a_c_oriole_01', 'Oriole', 'tiny', 1)
+add('a_c_pigeon', 'Pigeon', 'tiny', 1)
+add('a_c_quail_01', 'Quail', 'tiny', 1)
+add('a_c_rat_01', 'Rat', 'tiny', 1)
+add('a_c_robin_01', 'Robin', 'tiny', 1)
+add('a_c_songbird_01', 'Songbird', 'tiny', 1)
+add('a_c_sparrow_01', 'Sparrow', 'tiny', 1)
+add('a_c_toad_01', 'Toad', 'tiny', 1)
+add('a_c_woodpecker_01', 'Woodpecker', 'tiny', 1)
+add('a_c_woodpecker_02', 'Woodpecker', 'tiny', 1)
