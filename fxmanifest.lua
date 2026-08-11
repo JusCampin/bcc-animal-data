@@ -11,5 +11,6 @@ version '1.0.0'
 
 shared_scripts {
     'shared/animals.lua',
+    'shared/quality.lua',
     'shared/api.lua'
 }
