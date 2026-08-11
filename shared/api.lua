@@ -28,6 +28,10 @@ exports('GetCargoUnits', function(model, fallback)
     return animal and animal.cargoUnits or fallback
 end)
 
+exports('GetQualityFromProvision', function(provisionHash)
+    return AnimalQualityByProvision[tonumber(provisionHash)]
+end)
+
 exports('GetAllAnimals', function()
     local animals = {}
     for modelHash, animal in pairs(AnimalData) do
