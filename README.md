@@ -22,7 +22,12 @@ The catalog contains stable shared facts such as model, label, category, cargo
 units, `butcherable`, `skinnable`, `wagonStorable`, `carcassType`, and
 `legendary`. Fish, pelt-only models, and oversized aquatic models remain
 discoverable while their capability flags prevent consumers from treating them
-as ordinary wagon carcasses.
+as ordinary wagon carcasses or current butcher sales. Fish are marked as
+inventory items for a future inventory-based selling integration.
+
+Special story models such as the Mangy Lion remain catalogued for testing but
+are not advertised as skinnable, butcherable, or hunting-wagon cargo because
+the game does not provide them with the ordinary carcass interaction lifecycle.
 
 Consumer-specific values such as butcher prices, rewards, wagon capacity, and
 job requirements should remain in their respective resources.
