@@ -17,9 +17,9 @@ local function add(model, label, category, cargoUnits, options)
 end
 
 -- Large game and livestock
-add('a_c_alligator_01', 'American Alligator', 'large', 3)
-add('a_c_alligator_02', 'American Alligator', 'large', 3)
-add('a_c_alligator_03', 'American Alligator', 'large', 3)
+add('a_c_alligator_01', 'American Alligator 01', 'large', 3)
+add('a_c_alligator_02', 'American Alligator 02', 'large', 3)
+add('a_c_alligator_03', 'American Alligator 03', 'large', 3)
 add('a_c_bear_01', 'Grizzly Bear', 'massive', 3)
 add('a_c_bearblack_01', 'American Black Bear', 'massive', 3)
 add('a_c_bighornram_01', 'Bighorn Ram', 'large', 2)
@@ -40,21 +40,26 @@ add('a_c_panther_01', 'Panther', 'large', 2)
 add('a_c_pig_01', 'Pig', 'large', 2)
 add('a_c_pronghorn_01', 'American Pronghorn', 'large', 2)
 add('a_c_sheep_01', 'Sheep', 'large', 2)
-add('a_c_wolf', 'Gray Wolf', 'large', 2)
-add('a_c_wolf_01', 'Gray Wolf', 'large', 2)
-add('a_c_wolf_medium', 'Gray Wolf', 'large', 2)
-add('a_c_wolf_small', 'Gray Wolf', 'large', 2)
+add('a_c_wolf', 'Gray Wolf (Standard)', 'large', 2)
+add('a_c_wolf_medium', 'Gray Wolf (Medium)', 'large', 2)
+add('a_c_wolf_small', 'Gray Wolf (Small)', 'large', 2)
 
 -- Unique legendary and special ped models. Other legendary animals can reuse a
 -- normal species model and should be identified by their outfit/meta state.
-add('a_c_boarlegendary_01', 'Legendary Wild Boar', 'massive', 3, { legendary = true })
+add('a_c_boarlegendary_01', 'Legendary Wild Boar (Story)', 'massive', 3, { legendary = true })
 add('a_c_buffalo_tatanka_01', 'Tatanka Bison', 'massive', 3, { legendary = true })
-add('a_c_lionmangy_01', 'Mangy Lion', 'large', 2, { legendary = true })
+add('a_c_lionmangy_01', 'Mangy Lion', 'large', 2, {
+    legendary = true,
+    butcherable = false,
+    skinnable = false,
+    wagonStorable = false,
+    carcassType = 'special',
+})
 add('mp_a_c_alligator_01', 'Legendary Alligator', 'large', 3, { legendary = true })
 add('mp_a_c_bear_01', 'Legendary Bear', 'massive', 3, { legendary = true })
 add('mp_a_c_beaver_01', 'Legendary Beaver', 'medium', 1, { legendary = true })
 add('mp_a_c_bighornram_01', 'Legendary Bighorn Ram', 'large', 2, { legendary = true })
-add('mp_a_c_boar_01', 'Legendary Wild Boar', 'large', 2, { legendary = true })
+add('mp_a_c_boar_01', 'Legendary Wild Boar (Online)', 'large', 2, { legendary = true })
 add('mp_a_c_buck_01', 'Legendary Whitetail Buck', 'large', 2, { legendary = true })
 add('mp_a_c_buffalo_01', 'Legendary Bison', 'massive', 3, { legendary = true })
 add('mp_a_c_cougar_01', 'Legendary Cougar', 'large', 2, { legendary = true })
@@ -107,8 +112,8 @@ add('a_c_raven_01', 'Raven', 'bird', 1)
 add('a_c_rooster_01', 'Rooster', 'bird', 1)
 add('a_c_roseatespoonbill_01', 'Roseate Spoonbill', 'bird', 1)
 add('a_c_seagull_01', 'Seagull', 'bird', 1)
-add('a_c_turkey_01', 'Turkey', 'bird', 1)
-add('a_c_turkey_02', 'Turkey', 'bird', 1)
+add('a_c_turkey_01', 'Turkey 01', 'bird', 1)
+add('a_c_turkey_02', 'Turkey 02', 'bird', 1)
 add('a_c_turkeywild_01', 'Wild Turkey', 'bird', 1)
 add('a_c_vulture_01', 'Vulture', 'bird', 1)
 add('a_c_carolinaparakeet_01', 'Carolina Parakeet', 'bird', 1)
@@ -134,39 +139,45 @@ add('a_c_robin_01', 'Robin', 'tiny', 1)
 add('a_c_songbird_01', 'Songbird', 'tiny', 1)
 add('a_c_sparrow_01', 'Sparrow', 'tiny', 1)
 add('a_c_toad_01', 'Toad', 'tiny', 1)
-add('a_c_woodpecker_01', 'Woodpecker', 'tiny', 1)
-add('a_c_woodpecker_02', 'Woodpecker', 'tiny', 1)
+add('a_c_woodpecker_01', 'Woodpecker 01', 'tiny', 1)
+add('a_c_woodpecker_02', 'Woodpecker 02', 'tiny', 1)
 
 -- Fish use a different carry lifecycle and are not currently safe to persist
 -- in a hunting wagon, but remain available to butcher/inventory consumers.
-local fishOptions = { skinnable = false, wagonStorable = false, carcassType = 'fish' }
-add('a_c_fishbluegil_01_ms', 'Bluegill', 'fish', 1, fishOptions)
-add('a_c_fishbluegil_01_sm', 'Bluegill', 'fish', 1, fishOptions)
-add('a_c_fishbullheadcat_01_ms', 'Bullhead Catfish', 'fish', 1, fishOptions)
-add('a_c_fishbullheadcat_01_sm', 'Bullhead Catfish', 'fish', 1, fishOptions)
-add('a_c_fishchainpickerel_01_ms', 'Chain Pickerel', 'fish', 1, fishOptions)
-add('a_c_fishchainpickerel_01_sm', 'Chain Pickerel', 'fish', 1, fishOptions)
-add('a_c_fishchannelcatfish_01_lg', 'Channel Catfish', 'fish', 1, fishOptions)
-add('a_c_fishchannelcatfish_01_xl', 'Channel Catfish', 'fish', 1, fishOptions)
+local fishOptions = {
+    butcherable = false,
+    skinnable = false,
+    wagonStorable = false,
+    inventoryItem = true,
+    carcassType = 'fish',
+}
+add('a_c_fishbluegil_01_ms', 'Bluegill (Medium-Small)', 'fish', 1, fishOptions)
+add('a_c_fishbluegil_01_sm', 'Bluegill (Small)', 'fish', 1, fishOptions)
+add('a_c_fishbullheadcat_01_ms', 'Bullhead Catfish (Medium-Small)', 'fish', 1, fishOptions)
+add('a_c_fishbullheadcat_01_sm', 'Bullhead Catfish (Small)', 'fish', 1, fishOptions)
+add('a_c_fishchainpickerel_01_ms', 'Chain Pickerel (Medium-Small)', 'fish', 1, fishOptions)
+add('a_c_fishchainpickerel_01_sm', 'Chain Pickerel (Small)', 'fish', 1, fishOptions)
+add('a_c_fishchannelcatfish_01_lg', 'Channel Catfish (Large)', 'fish', 1, fishOptions)
+add('a_c_fishchannelcatfish_01_xl', 'Channel Catfish (Extra Large)', 'fish', 1, fishOptions)
 add('a_c_fishlakesturgeon_01_lg', 'Lake Sturgeon', 'fish', 1, fishOptions)
-add('a_c_fishlargemouthbass_01_lg', 'Largemouth Bass', 'fish', 1, fishOptions)
-add('a_c_fishlargemouthbass_01_ms', 'Largemouth Bass', 'fish', 1, fishOptions)
+add('a_c_fishlargemouthbass_01_lg', 'Largemouth Bass (Large)', 'fish', 1, fishOptions)
+add('a_c_fishlargemouthbass_01_ms', 'Largemouth Bass (Medium-Small)', 'fish', 1, fishOptions)
 add('a_c_fishlongnosegar_01_lg', 'Longnose Gar', 'fish', 1, fishOptions)
 add('a_c_fishmuskie_01_lg', 'Muskie', 'fish', 1, fishOptions)
 add('a_c_fishnorthernpike_01_lg', 'Northern Pike', 'fish', 1, fishOptions)
-add('a_c_fishperch_01_ms', 'Perch', 'fish', 1, fishOptions)
-add('a_c_fishperch_01_sm', 'Perch', 'fish', 1, fishOptions)
-add('a_c_fishrainbowtrout_01_lg', 'Steelhead Trout', 'fish', 1, fishOptions)
-add('a_c_fishrainbowtrout_01_ms', 'Steelhead Trout', 'fish', 1, fishOptions)
-add('a_c_fishredfinpickerel_01_ms', 'Redfin Pickerel', 'fish', 1, fishOptions)
-add('a_c_fishredfinpickerel_01_sm', 'Redfin Pickerel', 'fish', 1, fishOptions)
-add('a_c_fishrockbass_01_ms', 'Rock Bass', 'fish', 1, fishOptions)
-add('a_c_fishrockbass_01_sm', 'Rock Bass', 'fish', 1, fishOptions)
-add('a_c_fishsalmonsockeye_01_lg', 'Sockeye Salmon', 'fish', 1, fishOptions)
-add('a_c_fishsalmonsockeye_01_ml', 'Sockeye Salmon', 'fish', 1, fishOptions)
-add('a_c_fishsalmonsockeye_01_ms', 'Sockeye Salmon', 'fish', 1, fishOptions)
-add('a_c_fishsmallmouthbass_01_lg', 'Smallmouth Bass', 'fish', 1, fishOptions)
-add('a_c_fishsmallmouthbass_01_ms', 'Smallmouth Bass', 'fish', 1, fishOptions)
+add('a_c_fishperch_01_ms', 'Perch (Medium-Small)', 'fish', 1, fishOptions)
+add('a_c_fishperch_01_sm', 'Perch (Small)', 'fish', 1, fishOptions)
+add('a_c_fishrainbowtrout_01_lg', 'Steelhead Trout (Large)', 'fish', 1, fishOptions)
+add('a_c_fishrainbowtrout_01_ms', 'Steelhead Trout (Medium-Small)', 'fish', 1, fishOptions)
+add('a_c_fishredfinpickerel_01_ms', 'Redfin Pickerel (Medium-Small)', 'fish', 1, fishOptions)
+add('a_c_fishredfinpickerel_01_sm', 'Redfin Pickerel (Small)', 'fish', 1, fishOptions)
+add('a_c_fishrockbass_01_ms', 'Rock Bass (Medium-Small)', 'fish', 1, fishOptions)
+add('a_c_fishrockbass_01_sm', 'Rock Bass (Small)', 'fish', 1, fishOptions)
+add('a_c_fishsalmonsockeye_01_lg', 'Sockeye Salmon (Large)', 'fish', 1, fishOptions)
+add('a_c_fishsalmonsockeye_01_ml', 'Sockeye Salmon (Medium-Large)', 'fish', 1, fishOptions)
+add('a_c_fishsalmonsockeye_01_ms', 'Sockeye Salmon (Medium-Small)', 'fish', 1, fishOptions)
+add('a_c_fishsmallmouthbass_01_lg', 'Smallmouth Bass (Large)', 'fish', 1, fishOptions)
+add('a_c_fishsmallmouthbass_01_ms', 'Smallmouth Bass (Medium-Small)', 'fish', 1, fishOptions)
 
 -- Identification-only models that do not behave as ordinary carcass peds.
 local peltOptions = { butcherable = false, skinnable = false, wagonStorable = false, carcassType = 'pelt' }
